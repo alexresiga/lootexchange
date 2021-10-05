@@ -49,13 +49,16 @@ const useBag = (id) => {
     }
 
     const attributeWithIds = await Promise.all(attributesPromises);
+    console.log(attributeWithIds)
     for (let i = 0; i < attributes.length; ++i) {
       result.push({
         key: attributes[i].key,
         value: attributes[i].value,
-        id: attributeWithIds[0].id
+        id: attributeWithIds[i][0].id
       });
     }
+    console.log(attributeWithIds)
+
     return result;
   }
 
